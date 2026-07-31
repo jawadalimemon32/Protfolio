@@ -133,23 +133,32 @@ body {
   transition: all 0.3s ease;
 }
 
-.hero-buttons .btn:nth-child(2) {
-  background: transparent;
-  color: #00abf0;
-  border: 2px solid #00abf0;
-  box-shadow: none;
-}
-
 .hero-buttons .btn:hover {
   background: transparent;
   color: #00abf0;
   box-shadow: 0 0 20px rgba(0, 171, 240, 0.5);
 }
 
-.hero-buttons .btn:nth-child(2):hover {
+.hero-buttons .btn-outline {
+  background: transparent;
+  color: #00abf0;
+  border: 2px solid #00abf0;
+  box-shadow: none;
+}
+
+.hero-buttons .btn-outline:hover {
   background: #00abf0;
   color: #081b29;
   border-color: #00abf0;
+}
+
+@media (max-width: 480px) {
+  .hero-buttons .btn {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    text-align: center;
+  }
 }
 
 .hero-image img { 
@@ -318,6 +327,78 @@ h2 span {
 
 .project-card p {
   color: #94a3b8;
+}
+
+.skills-section {
+  background-color: #081b29;
+}
+
+.project-links {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.project-link {
+  color: #00abf0;
+  border: 1px solid #00abf0;
+  padding: 8px 16px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.project-link:hover {
+  background: #00abf0;
+  color: #081b29;
+  box-shadow: 0 0 12px rgba(0, 171, 240, 0.4);
+}
+
+/* Hamburger menu (mobile) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1100;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #00abf0;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: translateY(8.5px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-8.5px) rotate(-45deg);
+}
+
+/* Scroll fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ==========================================================================
@@ -503,10 +584,35 @@ h2 span {
 @media (max-width: 768px) {
   .navbar {
     padding: 15px 5%;
+    flex-wrap: wrap;
   }
-  
+
+  .hamburger {
+    display: flex;
+  }
+
+  .connect-btn {
+    display: none;
+  }
+
   .nav-links {
-    display: none; 
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    gap: 0;
+    transition: max-height 0.35s ease;
+  }
+
+  .nav-links.open {
+    max-height: 300px;
+    margin-top: 15px;
+  }
+
+  .nav-links li {
+    padding: 12px 0;
+    border-top: 1px solid rgba(0, 171, 240, 0.1);
   }
   
   .hero {
