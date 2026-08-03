@@ -139,11 +139,10 @@ body {
   box-shadow: 0 0 20px rgba(0, 171, 240, 0.5);
 }
 
-.hero-buttons .btn-outline {
+.hero-buttons .btn:hover {
   background: transparent;
   color: #00abf0;
-  border: 2px solid #00abf0;
-  box-shadow: none;
+  box-shadow: 0 0 20px rgba(0, 171, 240, 0.5);
 }
 
 .hero-buttons .btn-outline:hover {
