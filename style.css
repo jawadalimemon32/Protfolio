@@ -145,11 +145,6 @@ body {
   box-shadow: 0 0 20px rgba(0, 171, 240, 0.5);
 }
 
-.hero-buttons .btn-outline:hover {
-  background: #00abf0;
-  color: #081b29;
-  border-color: #00abf0;
-}
 
 @media (max-width: 480px) {
   .hero-buttons .btn {
